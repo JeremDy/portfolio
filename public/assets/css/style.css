@@ -2,10 +2,13 @@ body{
     font-family: 'Source Code Pro', monospace;
 }
 
+section{
+    padding-bottom: 5em;
+}
 h2{
     font-weight:bold;
     text-align:center;
-    margin: 2em 0;
+    padding: 1em;
 }
 
 
@@ -14,13 +17,13 @@ h2{
     height:60vh;
     color: #ffff;
     text-align: center;
-    padding-top:10%;
+    padding-top:20vh;
 }
 
 #portfolio{
-    color:#86C232;
-    background-color:#F6F6F6;  
-    padding: 0 10%;   
+    color: #393d47;
+    background-color:#F6F6F6;
+    padding: 0 10% 5em;   
 }
 
 #skill{
@@ -70,7 +73,23 @@ h2{
 .project-img{
     width: 90%;
     display:inline-block;
-    
+    border: solid 1px black;
+    -webkit-box-shadow: 0px 1px 16px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 16px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 16px 2px rgba(0,0,0,0.75);    
+}
+
+.project img {
+    -webkit-filter: brightness(100%);
+}
+
+.project img:hover {
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 

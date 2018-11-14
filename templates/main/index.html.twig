@@ -100,9 +100,24 @@
 </section>
 
 <section id="contact-section">
+    {% for label, messages in app.flashes(['warning', 'error', 'notice']) %}
+        {% for message in messages %}
+            <div class="alert alert-dark">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <h2>Contact</h2>
 
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class':'col-4 offset-4 font-weight-bold'}}) }}
+    {{ form_start(form, {
+            'attr': {
+                'novalidate': 'novalidate', 
+                'class':'col-4 offset-4 font-weight-bold', 
+                'action' : '/#contact',
+            } 
+        })
+    }}
+
     {{ form_widget(form) }}
     <div class="text-center">
         <button class="btn btn-dark">{{ button_label|default('Poster') }}</button>
