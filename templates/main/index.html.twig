@@ -99,9 +99,15 @@
     </div>
 </section>
 
-<section id="contact">
+<section id="contact-section">
     <h2>Contact</h2>
-    <p>Envoyer un Mail</p>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class':'col-4 offset-4 font-weight-bold'}}) }}
+    {{ form_widget(form) }}
+    <div class="text-center">
+        <button class="btn btn-dark">{{ button_label|default('Poster') }}</button>
+    </div>
+{{ form_end(form) }}
 </section>
 
 

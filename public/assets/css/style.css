@@ -45,8 +45,13 @@ h2{
     background: #91C53E;
 }
 
+#contact-section{
+    background-color:#343a40;
+    color: #fff;
+}
+
 #contact{
-    background-color:blue;
+    margin:auto;
 }
 
 .projects-wrapper{   
