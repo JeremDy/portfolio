@@ -1,0 +1,85 @@
+body{
+    font-family: 'Source Code Pro', monospace;
+}
+
+h2{
+    font-weight:bold;
+    text-align:center;
+    margin: 2em 0;
+}
+
+
+#home{
+    background-color:#393d47;
+    height:60vh;
+    color: #ffff;
+    text-align: center;
+    padding-top:10%;
+}
+
+#portfolio{
+    color:#86C232;
+    background-color:#F6F6F6;  
+    padding: 0 10%;   
+}
+
+#skill{
+    background-color:#ffff;
+}
+
+#skill ul{
+    list-style: none;
+    width:50%;
+    margin:auto;
+    text-align: center;
+}
+
+#skill ul li{
+    display:inline-block;
+    padding: 0 1em;
+    margin: 5px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    color: #fff;
+    background: #91C53E;
+}
+
+#contact{
+    background-color:blue;
+}
+
+.projects-wrapper{   
+    width:100%;
+    overflow: hidden; 
+}
+
+
+.project{
+    width:100%;
+    text-align:center;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.project-img{
+    width: 90%;
+    display:inline-block;
+    
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+    .project {
+      max-width: 50%;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .project {
+      max-width: 25%;
+    }
+}

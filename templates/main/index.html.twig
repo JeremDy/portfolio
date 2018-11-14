@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jérémy Debski{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#home">Acceuil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#skill">Compétences</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+     
+    </ul>
+  </div>
+</nav>
+
+
+<section id="home">
+    <div id="about">
+        <h1>Bienvenue !</h1>
+        <p>Je m'apelle Jérémy Debski.</p>
+        <p>Je suis Développeur fullstack junior.</p>
+    </div>
+
+</section>
+
+<section id="skill">
+    <h2>Compétences</h2>
+
+    <ul>
+        <li>HTML5/CSS3</li>
+        <li>Bootstrap4</li>
+        <li>responsive design</li>
+        <li>Ajax</li>
+        <li>Json</li>
+        <li>JAVASCRIPT</li>
+        <li>MYSQL/MariaDB</li>
+        <li>JQUERY</li>
+        <li>php7</li>
+        <li>MVC</li>
+        <li>POO</li>
+        <li>Symfony 4</li>
+        <li>Doctrine</li>
+        <li>composer</li>
+        <li>Twig</li>
+        <li>GIT/GitHub</li>
+        <li>Linux</li>
+        <li>VScode</li>
+        <li>Méthodologies Agile (SCRUM - Kanban) trello </li>
+        <li>Opquast Expert</li>
+        <li>Websocket (socket.io/Ratchet)</li>
+        <li>Apache</li>
+    <ul>
+</section>
+
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="projects-wrapper">
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+
+        <div class="project">
+            <img class="project-img" src="https://picsum.photos/360/200">
+        </div>
+    
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Envoyer un Mail</p>
+</section>
+
+
+{% endblock %}
