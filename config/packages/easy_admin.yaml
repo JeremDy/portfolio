@@ -1,0 +1,37 @@
+easy_admin:
+    entities:
+
+        ProjectImage:
+                class: App\Entity\ProjectImage
+
+        Skill:
+            class: App\Entity\Skill  
+
+        Project:
+            class: App\Entity\Project
+            form:    
+                fields:
+                    - { property: 'name', type: 'text' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - url
+                    - skills
+                    - { property: 'description', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'projectImages', type: 'collection', type_options: { entry_type: 'App\Form\ProjectImageType',  by_reference: false  }}
+
+            list:
+                fields: 
+                    - id  
+                    - name
+                    - url
+                    - { property: 'image', type: 'image', base_path: '/images/products' }
+            show:
+                fields:
+                    - { property: 'image', type: 'text' }
+                    - { property: 'image', type: 'image', base_path: '/images/products' } 
+            
+
+        # List the entity class name you want to manage
+        
+
+       
+

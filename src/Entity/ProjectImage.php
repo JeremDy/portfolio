@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectImageRepository")
+ * @Vich\Uploadable
  */
 class ProjectImage
 {
@@ -18,47 +21,69 @@ class ProjectImage
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
-    private $name;
+    private $image;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Vich\UploadableField(mapping="products", fileNameProperty="image")
+     * @var File
      */
-    private $url;
+    private $imageFile;
+
+   
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Project", inversedBy="projectImages")
      */
     private $project;
 
+    public function __toString()
+    {
+        return $this->image;        
+
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+   
+    public function setImageFile(File $image = null)
     {
-        return $this->name;
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function setName(string $name): self
+    public function getImageFile()
     {
-        $this->name = $name;
-
-        return $this;
+        return $this->imageFile;
     }
 
-    public function getUrl(): ?string
+    public function setImage($image)
     {
-        return $this->url;
+        $this->image = $image;
     }
 
-    public function setUrl(string $url): self
+    public function getImage()
     {
-        $this->url = $url;
-
-        return $this;
+        return $this->image;
     }
+
 
     public function getProject(): ?Project
     {
@@ -70,5 +95,10 @@ class ProjectImage
         $this->project = $project;
 
         return $this;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

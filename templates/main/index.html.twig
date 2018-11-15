@@ -71,31 +71,14 @@
 <section id="portfolio">
     <h2>Portfolio</h2>
     <div class="projects-wrapper">
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-
-        <div class="project">
-            <img class="project-img" src="https://picsum.photos/360/200">
-        </div>
-    
+        {% for project in projects %}
+            <a href ="{{ path('project', {'id': project.id}) }}">
+                <div class="project">
+                    <img class="project-img" src="https://picsum.photos/360/200">
+                    <p class="project-title"> {{ project.name }}</p>
+                </div>
+            </a> 
+        {% endfor %}
     </div>
 </section>
 

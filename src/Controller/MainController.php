@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\ContactType;
 use App\Entity\Contact;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\ProjectRepository;
 ;
 
 class MainController extends AbstractController
@@ -14,13 +15,14 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="home", methods={"GET"})
      */
-    public function index(Request $request)
+    public function index(Request $request, ProjectRepository $projectRepository)
     {
         $form = $this->createForm(ContactType::class);
   
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'form' => $form->createView(),
+            'projects' => $projectRepository->findAll(),
         ]);
     }
 
@@ -28,7 +30,7 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="contact", methods={"POST"})
      */
-    public function contact(Request $request)
+    public function contact(Request $request, ProjectRepository $projectRepository)
     {
 
         $contact = new Contact();
@@ -51,6 +53,7 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'form' => $form->createView(),
+            'projects' => $projectRepository->findAll(),
         ]);
     }
 }
