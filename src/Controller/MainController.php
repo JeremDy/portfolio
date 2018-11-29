@@ -8,6 +8,7 @@ use App\Form\ContactType;
 use App\Entity\Contact;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\ProjectRepository;
+use App\Repository\SkillRepository;
 ;
 
 class MainController extends AbstractController
@@ -15,7 +16,7 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="home", methods={"GET"})
      */
-    public function index(Request $request, ProjectRepository $projectRepository)
+    public function index(Request $request, ProjectRepository $projectRepository, SkillRepository $skillRepository)
     {
         $form = $this->createForm(ContactType::class);
   
@@ -23,6 +24,7 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
             'form' => $form->createView(),
             'projects' => $projectRepository->findAll(),
+            'skills' => $skillRepository->findAll(),
         ]);
     }
 

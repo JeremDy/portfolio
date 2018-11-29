@@ -1,14 +1,26 @@
 body{
     font-family: 'Source Code Pro', monospace;
+    overflow-x:hidden;
 }
 
 section{
     padding-bottom: 5em;
 }
+
+h1{
+    font-size:3em;
+    padding: 2em 0 0.7em;  
+}
+
+#about p{
+    font-size:1.2em;
+}
 h2{
     font-weight:bold;
     text-align:center;
     padding: 1em;
+    color:#393d47;
+    text-shadow: 1px 1px #51555a8a;
 }
 
 
@@ -17,27 +29,24 @@ h2{
     height:60vh;
     color: #ffff;
     text-align: center;
-    padding-top:20vh;
 }
 
 #portfolio{
-    color: #393d47;
+    color: #681638;
     background-color:#F6F6F6;
     padding: 0 10% 5em;   
 }
 
 #skill{
-    background-color:#ffff;
+    background-color:#ffff; 
 }
 
-#skill ul{
+.skill-list{
     list-style: none;
-    width:50%;
-    margin:auto;
     text-align: center;
 }
 
-#skill ul li{
+.skill-list-item{
     display:inline-block;
     padding: 0 1em;
     margin: 5px;
@@ -45,7 +54,10 @@ h2{
     line-height: 36px;
     border-radius: 18px;
     color: #fff;
-    background: #91C53E;
+    background: rgb(63, 126, 120);
+    font-weight:bolder;
+    font-size: 0.9em;
+     
 }
 
 #contact-section{
@@ -55,6 +67,10 @@ h2{
 
 #contact{
     margin:auto;
+}
+
+#contact-section h2{
+    color:#fff;
 }
 
 .projects-wrapper{   
@@ -74,7 +90,9 @@ h2{
 }
 
 .project-img{
-    width: 90%;
+    width:100%;
+    object-fit: cover;
+    height: 200px;
     display:inline-block;
     border: solid 1px white;
     -webkit-box-shadow: 0px 1px 16px 2px rgba(0,0,0,0.75);
@@ -121,17 +139,53 @@ h2{
 }
 
 
+.carousel-item img {
+    margin-top:2em;
+    object-fit: cover;
+    height: 300px;
+  }
+
+.title{
+    background-color:#393d47;
+    color:white;
+    text-align:center;
+    padding:2em;
+    text-transform: uppercase; 
+}
+
+.my-name{
+    color:rgb(233, 189, 139);
+    font-weight:bolder;
+}
+
+.job{
+    color:rgb(70, 211, 176);
+    font-weight:bolder;
+}
+
+.description p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:1.1em;
+}
+
+
+
+
 
 
 @media screen and (min-width: 768px) {
     .project {
       max-width: 50%;
     }
+
+    .carousel{
+        padding-top:7%;
+    }
 }
 
 
 @media screen and (min-width: 992px) {
     .project {
-      max-width: 25%;
+      max-width: 33%;
     }
 }

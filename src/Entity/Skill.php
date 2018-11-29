@@ -28,6 +28,11 @@ class Skill
      */
     private $projects;
 
+    public function __toString()
+    {
+         return $this->name;
+    }
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
