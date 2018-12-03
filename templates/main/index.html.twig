@@ -6,9 +6,9 @@
 
 <section id="home">
     <div id="about">
-        <h1>Bienvenue !</h1>
-        <p>Je m'apelle <span class="my-name">Jérémy Debski.</span></p>
-        <p>Je suis <span class="job">Développeur fullstack junior </span>.</p>
+        <h1 id="welcome">Bienvenue!</h1>
+        <p>Je m'apelle <span class="my-name">{{owner ? owner.name}}</span>.</p>
+        <p>Je suis <span class="job">{{owner ? owner.job}}</span>.</p>
     </div>
 
 </section>
@@ -39,30 +39,48 @@
     </div>
 </section>
 
-<section id="contact-section">
-    {% for label, messages in app.flashes(['warning', 'error', 'notice']) %}
-        {% for message in messages %}
-            <div class="alert alert-dark">
-                {{ message }}
-            </div>
+<section id="contact-section" class="row">
+    <div id="contact-form" class="col-10 offset-1 offset-md-2 col-md-3 order-2 order-md-1">
+        {% for label, messages in app.flashes(['warning', 'error', 'notice']) %}
+            {% for message in messages %}
+                <div class="alert alert-dark">
+                    {{ message }}
+                </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-    <h2>Contact</h2>
+        <h2>Contact</h2>
 
-    {{ form_start(form, {
-            'attr': {
-                'novalidate': 'novalidate', 
-                'class':'col-10 offset-1 col-md-4 offset-md-4 font-weight-bold', 
-                'action' : '/#contact',
-            } 
-        })
-    }}
+        {{ form_start(form, {
+                'attr': {
+                    'novalidate': 'novalidate', 
+                    'class':'font-weight-bold', 
+                    'action' : '/#contact',
+                } 
+            })
+        }}
 
-    {{ form_widget(form) }}
-    <div class="text-center">
-        <button class="btn btn-dark">{{ button_label|default('Poster') }}</button>
+        {{ form_widget(form) }}
+        <div class="text-center">
+            <button class="btn btn-dark">{{ button_label|default('Poster') }}</button>
+        </div>
+    {{ form_end(form) }}
     </div>
-{{ form_end(form) }}
+    
+    <div id="about-me" class="row col-10 offset-1 order-1 col-md-4 order-md-2 text-center">
+
+        
+        
+            <h2>A Propos de moi</h2>
+            
+            <img id="owner-img" class="mx-auto mb-3" src="{{asset('images/products')}}/{{owner ? owner.image}}">
+            
+            <div class="description">
+            {{owner ? owner.description|raw }}
+
+            <a href="{{asset('images/products')}}/{{owner ? owner.cv}}">Mon Cv</a>
+            </div>
+        
+    </div>
 </section>
 
 

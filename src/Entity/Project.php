@@ -47,7 +47,7 @@ class Project
      */
     private $skills;
 
-      /**
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */

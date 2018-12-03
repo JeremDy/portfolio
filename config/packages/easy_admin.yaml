@@ -27,7 +27,27 @@ easy_admin:
             show:
                 fields:
                     - { property: 'image', type: 'text' }
-                    - { property: 'image', type: 'image', base_path: '/images/products' } 
+                    - { property: 'image', type: 'image', base_path: '/images/products' }
+
+        Owner:
+            class: App\Entity\Owner
+            list:
+                - id
+                - name
+                - { property: 'image', type: 'image', base_path: '/images/products' }
+                - { property: 'cv', template: 'cv.html.twig' }
+            
+            
+            form:
+                fields:
+                    - { property: 'name', type: 'text' }
+                    - { property: 'job', type: 'text' }
+                    - { property: 'mail', type: 'text' }
+                    - { property: 'linkedin', type: 'text' }
+                    - { property: 'github', type: 'text' }
+                    - { property: 'description', type: 'FOS\CKEditorBundle\Form\Type\CKEditorType' }
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'cvFile', type: 'vich_file' }
             
 
         # List the entity class name you want to manage

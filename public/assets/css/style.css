@@ -1,15 +1,28 @@
+html{
+    height:100%;
+}
+
 body{
     font-family: 'Source Code Pro', monospace;
     overflow-x:hidden;
+    min-height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    
 }
 
 section{
     padding-bottom: 5em;
 }
 
-h1{
+#welcome{
     font-size:3em;
     padding: 2em 0 0.7em;  
+}
+
+h3{
+    width:100%;
 }
 
 #about p{
@@ -17,6 +30,7 @@ h1{
 }
 h2{
     font-weight:bold;
+    width:100%;
     text-align:center;
     padding: 1em;
     color:#393d47;
@@ -61,7 +75,7 @@ h2{
 }
 
 #contact-section{
-    background-color:#343a40;
+    background-color:#393D47;
     color: #fff;
 }
 
@@ -150,7 +164,6 @@ h2{
     color:white;
     text-align:center;
     padding:2em;
-    text-transform: uppercase; 
 }
 
 .my-name{
@@ -166,6 +179,27 @@ h2{
 .description p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size:1.1em;
+}
+
+#owner-img{
+    height: 10em;
+}
+
+footer{
+    clear: both;
+    position: absolute;
+    bottom:0;
+    background-color:#343A40;
+    height:50px;
+    width:100%;
+    color:white;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+footer a{
+    color:white;
 }
 
 
